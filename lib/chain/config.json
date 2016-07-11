@@ -1,0 +1,12 @@
+{
+ "commandlist": {
+    "SH":  {
+             "CMD"   :"get_config | jq keys",
+             "CType" :"application/json"
+            },
+    "EB":  {
+             "CMD"   :"get_config | jq keys",
+             "CType" :"application/json"
+            }
+  }
+}

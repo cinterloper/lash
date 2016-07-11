@@ -1,0 +1,18 @@
+{
+  "EB":{
+    "decoder":"json",
+    "encoder":"json",
+    "headers":"json"
+  },
+  "SH":{
+    "decoder":"query",
+    "encoder":"json",
+    "headers":"json"
+  },
+  "HTTP":{
+    "decoder":"query",
+    "encoder":"json",
+    "headers":"http"
+  }
+
+}

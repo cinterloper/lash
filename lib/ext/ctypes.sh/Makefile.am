@@ -1,0 +1,5 @@
+SUBDIRS = src
+bin_SCRIPTS = ctypes.sh
+
+CLEANFILES = $(bin_SCRIPTS)
+ACLOCAL_AMFLAGS = -I m4

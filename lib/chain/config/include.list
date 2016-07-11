@@ -1,0 +1,7 @@
+lib/pure/encdec.sh
+lib/pure/random.sh
+lib/pure/util.sh
+lib/pure/http.sh
+lib/cfg/jq.sh
+lib/cfg/file_config.sh
+

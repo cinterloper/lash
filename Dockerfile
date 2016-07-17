@@ -17,4 +17,6 @@ RUN echo "source /root/.sdkman/bin/sdkman-init.sh >> /etc/bash.bashrc"
 RUN bash -c "echo 'CLASSPATH=$CLASSPATH:$(find /root/.sdkman/candidates/vertx/current/lib/ | while read fl; do echo -n $fl:; done)'" >> /etc/bash.bashrc
 
 RUN bash -c '/root/.sdkman/candidates/groovyserv/current/bin/groovyclient'
+RUN apt install nano
+ENV TERM=xterm
 CMD bash

@@ -16,12 +16,12 @@ run_task( )
   then
     printf -v DATE '%(%D-%T)T\n' -1 #
     TASK_ID=$(generate_task_id $DATE)
-    KEY_SET='CMD HOSTNAME METHOD DATE TASK_ID' $outputEncoder
-    eval $CMDSTRING >> $LOG_PATH/$TASK_ID 2>&1 &
+    CONTENT_OUT=$(KEY_SET='CMD HOSTNAME METHOD DATE TASK_ID' $outputEncoder)
+    $CMDSTRING >> $LOG_PATH/$TASK_ID 2>&1
     CMD_PID=$!
     disown $CMD_PID
     KEY_SET='CMD HOSTNAME METHOD DATE CMD_PID TASK_ID' $outputEncoder
   else
-    eval $CMDSTRING 2>&1
+    export OUTPUT="$($CMDSTRING 2>&1)"
   fi
 }

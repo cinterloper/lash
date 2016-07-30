@@ -1,15 +1,15 @@
 #!/bin/bash
 
-source ../ctypes.sh
+source ctypes.sh
 
-set -e -x
+set -e
 
 # load the math library
-dlopen libm.so
+dlopen libm.so || dlopen libm.so.6
 
 function verify_result()
 {
-    dlcall -n result -h ${DLHANDLES[libm.so]} -r ${3} ${1} ${2}
+    dlcall -n result -r ${3} ${1} ${2}
 
     if test "$result" != "${3}:${4}"; then
         echo FAIL

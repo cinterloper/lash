@@ -1,0 +1,16 @@
+{ global:
+callback_struct;
+cu__find_struct_by_name;
+cu__find_struct_by_sname;
+cus__find_struct_by_name;
+dlcall_struct;
+dlclose_struct;
+dlopen_struct;
+dlsym_struct;
+find_anon_struct_typedef;
+insert_struct_padding;
+pack_struct;
+sizeof_struct;
+struct_struct;
+unpack_struct;
+local: *; };

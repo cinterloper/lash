@@ -1,0 +1,8 @@
+struct/libstruct_la-rbtree.lo: struct/rbtree.c /usr/include/stdc-predef.h \
+ struct/rbtree.h /usr/lib/gcc/x86_64-linux-gnu/5/include/stddef.h
+
+/usr/include/stdc-predef.h:
+
+struct/rbtree.h:
+
+/usr/lib/gcc/x86_64-linux-gnu/5/include/stddef.h:

@@ -6,7 +6,7 @@ RUN cd /opt/lash/lib/ext/ctypes.sh && ./configure && make && make install
 ENV LASH_PATH="/opt/lash"
 RUN luarocks install turbo
 RUN cd /opt; git clone https://github.com/torch/distro.git torch --recursive && cd torch && bash install-deps && ./install.sh
-
+RUN cd /opt/lash/lib/; git clone https://github.com/cinterloper/jstruct.sh.git jstruct
 
 RUN cd /opt/lash/lib/ext/bats; ./install.sh /usr/local/
 RUN curl -s "https://get.sdkman.io" | bash

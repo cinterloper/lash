@@ -1,4 +1,5 @@
-FROM ubuntu:16.04
+FROM ubuntu:xenial
+RUN locale-gen en_US.UTF-8 
 ADD project /opt/lash
 RUN apt update && apt install -y sudo python python-pip libluajit-5.1-dev luajit make cmake clang curl luarocks git libssl-dev autoconf libnice-dev libglib2.0-dev openjdk-8-jdk jq groovy2 libdw1 ; apt clean
 RUN cd /opt; wget  https://github.com/sctplab/usrsctp/archive/0.9.3.0.zip; unzip 0.9.3.0.zip; cd usrsctp-0.9.3.0;./bootstrap && ./configure && make && make install
@@ -19,6 +20,10 @@ RUN cd /opt; wget https://github.com/zdevito/terra/releases/download/release-201
 RUN echo 'PATH=$PATH:/opt/terra-Linux-x86_64-332a506/bin/' >> /etc/bash.bashrc
 RUN echo 'LUA_CPATH="$LUA_CPATH;/opt/terra-Linux-x86_64-332a506/lib/?.so"' >> /etc/bash.bashrc
 RUN bash -c '/root/.sdkman/candidates/groovyserv/current/bin/groovyclient'
-RUN apt install nano
+RUN apt install -y nano moreutils socat screen mbuffer pv npm nodejs
+RUN pip install httplib2 httpie
+RUN git clone https://github.com/cinterloper/nxc.git /opt/nxc && cd /opt/nxc && npm install . && echo 'PATH=$PATH:/opt/nxc' >> /etc/bash.bashrc
+
+
 ENV TERM=xterm
 CMD bash
